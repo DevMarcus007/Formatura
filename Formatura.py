@@ -35,9 +35,15 @@ st.markdown(barra_html, unsafe_allow_html=True)
 from streamlit_carousel import carousel
 
 image_urls = [
-    {"title": "Foto 1", "img": "foto1.jpg", "text": "Descrição da foto 1"},
-    {"title": "Foto 2", "img": "foto2.webp", "text": "Descrição da foto 2"},
-    {"title": "Foto 3", "img": "foto3.webp", "text": "Descrição da foto 3"},
+    {"title": "", "img": "foto1.jpg", "text": ""},
+    {"title": "", "img": "foto2.webp", "text": ""},
+    {"title": "", "img": "foto3.webp", "text": ""},
 ]
 
-carousel(items=image_urls)
+carousel(items=image_urls, 
+         fade=True, 
+         interval=5000, 
+         indicators=True,
+         wrap = True,
+        container_height = 400,
+        width = 1)
