@@ -40,4 +40,4 @@ image_urls = [
     {"title": "Foto 3", "img": "foto3.webp", "text": "Descrição da foto 3"},
 ]
 
-carousel(items=image_urls, width=600)
+carousel(items=image_urls)
