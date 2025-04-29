@@ -13,6 +13,10 @@ dias_faltando = (data_formatura - hoje).days
 percentual = max(0, min(100, int((dias_passados / total_dias) * 100)))
 
 # Título
+col1, col2, col3 = st.columns([2,1,2])
+with col2:
+    st.image("diploma.webp", width=200,)
+
 st.title(f"Formatura OESM 2025 - Turma 502")
 
 st.subheader(f"Faltam {dias_faltando} dias.")
