@@ -30,3 +30,32 @@ barra_html = f"""
 """
 
 st.markdown(barra_html, unsafe_allow_html=True)
+
+
+
+imagens = [
+    "foto1.jpg",
+    "foto2.webp",
+    "foto3.webp"
+]
+
+# Controle de índice usando estado da sessão
+if "indice" not in st.session_state:
+    st.session_state.indice = 0
+
+# Funções para navegação
+def proximo():
+    st.session_state.indice = (st.session_state.indice + 1) % len(imagens)
+
+def anterior():
+    st.session_state.indice = (st.session_state.indice - 1) % len(imagens)
+
+# Botões de navegação
+col1, col2, col3 = st.columns([1, 2, 1])
+with col1:
+    st.button("⬅️ Anterior", on_click=anterior)
+with col3:
+    st.button("Próximo ➡️", on_click=proximo)
+
+# Exibição da imagem atual
+st.image(imagens[st.session_state.indice], use_column_width=True)
