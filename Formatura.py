@@ -59,3 +59,14 @@ with col3:
 
 # Exibição da imagem atual
 st.image(imagens[st.session_state.indice], use_container_width=True)
+
+
+from streamlit_carousel import carousel
+
+image_urls = [
+    {"title": "Foto 1", "img": "foto1.jpg"},
+    {"title": "Foto 2", "img": "foto2.webp"},
+    {"title": "Foto 3", "img": "foto3.webp"},
+]
+
+carousel(items=image_urls, width=600, height=400)
