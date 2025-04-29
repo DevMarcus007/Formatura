@@ -19,7 +19,7 @@ with col2:
 
 st.title(f"Formatura OESM 2025 - Turma 502")
 
-st.subheader(f"Faltam {dias_faltando} dias.")
+st.markdown(f"<p style='text-align: center;  padding: 1px; font-size: 16px;'>Faltam {dias_faltando} dias.</p>", unsafe_allow_html=True)
 
 # Barra de progresso personalizada horizontal
 barra_html = f"""
