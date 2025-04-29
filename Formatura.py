@@ -32,41 +32,12 @@ barra_html = f"""
 st.markdown(barra_html, unsafe_allow_html=True)
 
 
-
-imagens = [
-    "foto1.jpg",
-    "foto2.webp",
-    "foto3.webp"
-]
-
-# Controle de índice usando estado da sessão
-if "indice" not in st.session_state:
-    st.session_state.indice = 0
-
-# Funções para navegação
-def proximo():
-    st.session_state.indice = (st.session_state.indice + 1) % len(imagens)
-
-def anterior():
-    st.session_state.indice = (st.session_state.indice - 1) % len(imagens)
-
-# Botões de navegação
-col1, col2, col3 = st.columns([1, 2, 1])
-with col1:
-    st.button("⬅️ Anterior", on_click=anterior)
-with col3:
-    st.button("Próximo ➡️", on_click=proximo)
-
-# Exibição da imagem atual
-st.image(imagens[st.session_state.indice], use_container_width=True)
-
-
 from streamlit_carousel import carousel
 
 image_urls = [
-    {"title": "Foto 1", "img": "foto1.jpg"},
-    {"title": "Foto 2", "img": "foto2.webp"},
-    {"title": "Foto 3", "img": "foto3.webp"},
+    {"title": "Foto 1", "img": "foto1.jpg", "text": "Descrição da foto 1"},
+    {"title": "Foto 2", "img": "foto2.webp", "text": "Descrição da foto 2"},
+    {"title": "Foto 3", "img": "foto3.webp", "text": "Descrição da foto 3"},
 ]
 
-carousel(items=image_urls, width=600, height=400)
+carousel(items=image_urls, width=600)
