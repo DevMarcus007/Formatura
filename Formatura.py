@@ -58,4 +58,4 @@ with col3:
     st.button("Próximo ➡️", on_click=proximo)
 
 # Exibição da imagem atual
-st.image(imagens[st.session_state.indice], use_column_width=True)
+st.image(imagens[st.session_state.indice], use_container_width=True)
